@@ -31,9 +31,9 @@ public class HeatIndexDisplay implements Observer, DisplayElement{
     }
 
     @Override
-    public void update(float temp, float humidity, float pressure) {
-        this.temp = temp;
-        this.pressure = pressure;
+    public void update() {
+        this.temp = weatherData.getTemperature();
+        this.pressure = weatherData.getPressure();
         display();
     }
 }
