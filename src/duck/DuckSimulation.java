@@ -10,5 +10,8 @@ public class DuckSimulation {
 
         Duck rubberDuck = new RubberDuck();
         rubberDuck.print();
+
+        Duck decoyDuck = new DecoyDuck();
+        decoyDuck.print();
     }
 }
