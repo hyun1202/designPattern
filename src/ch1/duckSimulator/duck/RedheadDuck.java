@@ -1,7 +1,7 @@
-package duckSimulator.duck;
+package ch1.duckSimulator.duck;
 
-import duckSimulator.fly.FlyWithWings;
-import duckSimulator.quack.Quack;
+import ch1.duckSimulator.fly.FlyWithWings;
+import ch1.duckSimulator.quack.Quack;
 
 public class RedheadDuck extends Duck {
 

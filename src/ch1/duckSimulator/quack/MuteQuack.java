@@ -1,6 +1,6 @@
-package duckSimulator.quack;
+package ch1.duckSimulator.quack;
 
-import duckSimulator.behavior.QuackBehavior;
+import ch1.duckSimulator.behavior.QuackBehavior;
 
 public class MuteQuack implements QuackBehavior {
     @Override

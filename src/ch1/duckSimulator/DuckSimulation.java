@@ -1,7 +1,7 @@
-package duckSimulator;
+package ch1.duckSimulator;
 
-import duckSimulator.duck.*;
-import duckSimulator.fly.FlyRocketPowered;
+import ch1.duckSimulator.duck.*;
+import ch1.duckSimulator.fly.FlyRocketPowered;
 
 public class DuckSimulation {
     public static void main(String[] args) {

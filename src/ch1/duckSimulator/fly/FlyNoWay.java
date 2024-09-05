@@ -1,6 +1,6 @@
-package duckSimulator.fly;
+package ch1.duckSimulator.fly;
 
-import duckSimulator.behavior.FlyBehavior;
+import ch1.duckSimulator.behavior.FlyBehavior;
 
 public class FlyNoWay implements FlyBehavior {
     @Override

@@ -1,7 +1,7 @@
-package duckSimulator.duck;
+package ch1.duckSimulator.duck;
 
-import duckSimulator.fly.FlyNoWay;
-import duckSimulator.quack.Squeak;
+import ch1.duckSimulator.fly.FlyNoWay;
+import ch1.duckSimulator.quack.Squeak;
 
 // 슈퍼클래스에서 quack 함수와 fly 함수가 삭제되었으므로 반영해주어야 한다.
 public class RubberDuck extends Duck {

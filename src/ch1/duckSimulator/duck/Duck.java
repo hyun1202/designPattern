@@ -1,7 +1,7 @@
-package duckSimulator.duck;
+package ch1.duckSimulator.duck;
 
-import duckSimulator.behavior.FlyBehavior;
-import duckSimulator.behavior.QuackBehavior;
+import ch1.duckSimulator.behavior.FlyBehavior;
+import ch1.duckSimulator.behavior.QuackBehavior;
 
 /**
  * 요구사항 추가!

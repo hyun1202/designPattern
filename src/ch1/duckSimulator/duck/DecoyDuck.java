@@ -1,7 +1,7 @@
-package duckSimulator.duck;
+package ch1.duckSimulator.duck;
 
-import duckSimulator.fly.FlyNoWay;
-import duckSimulator.quack.MuteQuack;
+import ch1.duckSimulator.fly.FlyNoWay;
+import ch1.duckSimulator.quack.MuteQuack;
 
 public class DecoyDuck extends Duck {
 
