@@ -36,4 +36,15 @@ public abstract class Duck {
     public void display() {
         System.out.println("duckSimulator");
     }
+
+    /*
+        동적으로 행동 지정하기 위해 setter method 추가
+     */
+    public void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
+
+    public void setQuackBehavior(QuackBehavior quackBehavior) {
+        this.quackBehavior = quackBehavior;
+    }
 }

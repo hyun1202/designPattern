@@ -1,6 +1,7 @@
 package duckSimulator;
 
 import duckSimulator.duck.*;
+import duckSimulator.fly.FlyRocketPowered;
 
 public class DuckSimulation {
     public static void main(String[] args) {
@@ -15,5 +16,11 @@ public class DuckSimulation {
 
         Duck decoyDuck = new DecoyDuck();
         decoyDuck.print();
+
+        // 모형 오리 추가
+        Duck modelDuck = new ModelDuck();
+        modelDuck.performFly(); // 날 수 없음
+        modelDuck.setFlyBehavior(new FlyRocketPowered());
+        modelDuck.performFly(); // 로켓 장착
     }
 }
