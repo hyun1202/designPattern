@@ -20,5 +20,14 @@ public class StarbuzzCoffee {
         beverage = new Whip(beverage);
         // 우유 + 휘핑크림 추가
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
+        // 사이즈 변경 및 우유와 휘핑크림 추가
+        beverage = new Espresso(Beverage.Size.VENTI);
+        beverage = new Whip(new Milk(beverage));
+
+        System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
+        // 1.99 + .10 + .10 +
+        // 크기 값 .6 + .4 + .2
     }
 }

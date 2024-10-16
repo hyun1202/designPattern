@@ -5,8 +5,17 @@ public class HouseBlend extends Beverage {
         description = "하우스 블렌드";
     }
 
+    public HouseBlend(Size size) {
+        description = "하우스 블렌드";
+        setSize(size);
+    }
+
     @Override
     public double cost() {
-        return .89;
+        return switch (getSize()) {
+            case TALL -> .89;
+            case GRANDE -> .89 + .3;
+            case VENTI -> .89 + .6;
+        };
     }
 }
