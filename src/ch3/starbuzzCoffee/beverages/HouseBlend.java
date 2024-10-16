@@ -1,4 +1,4 @@
-package ch3.beverages;
+package ch3.starbuzzCoffee.beverages;
 
 public class HouseBlend extends Beverage {
     public HouseBlend() {

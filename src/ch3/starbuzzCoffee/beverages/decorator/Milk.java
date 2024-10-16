@@ -1,6 +1,6 @@
-package ch3.beverages.decorator;
+package ch3.starbuzzCoffee.beverages.decorator;
 
-import ch3.beverages.Beverage;
+import ch3.starbuzzCoffee.beverages.Beverage;
 
 public class Milk extends CondimentDecorator {
     // 데코레이트(감싸고자)하고자 하는 객체를 생성자로 받는다.

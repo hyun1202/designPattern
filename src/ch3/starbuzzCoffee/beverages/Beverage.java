@@ -1,4 +1,4 @@
-package ch3.beverages;
+package ch3.starbuzzCoffee.beverages;
 
 /*
     요구사항 추가:

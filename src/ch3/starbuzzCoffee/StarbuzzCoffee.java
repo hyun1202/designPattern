@@ -1,10 +1,10 @@
-package ch3;
+package ch3.starbuzzCoffee;
 
-import ch3.beverages.Beverage;
-import ch3.beverages.Espresso;
-import ch3.beverages.HouseBlend;
-import ch3.beverages.decorator.Milk;
-import ch3.beverages.decorator.Whip;
+import ch3.starbuzzCoffee.beverages.Beverage;
+import ch3.starbuzzCoffee.beverages.Espresso;
+import ch3.starbuzzCoffee.beverages.HouseBlend;
+import ch3.starbuzzCoffee.beverages.decorator.Milk;
+import ch3.starbuzzCoffee.beverages.decorator.Whip;
 
 public class StarbuzzCoffee {
     public static void main(String[] args) {
