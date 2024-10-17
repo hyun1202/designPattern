@@ -1,24 +1,21 @@
 package ch4.pizza;
 
+import ch4.pizza.ingredient.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
     String name;
-    String dough;
-    String sauce;
-    List<String> toppings = new ArrayList<>();
+    Dough dough;
+    Sauce sauce;
+    Veggies veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clam;
 
-    void prepare() {
-        System.out.println(name + "피자 준비");
-        System.out.println("도우 돌리기");
-        System.out.println("소스 뿌리기");
-        System.out.print("토핑 올리기:");
-        for (String topping : toppings) {
-            System.out.print(" " + topping);
-        }
-        System.out.println();
-    }
+    abstract void prepare();
+
     void bake() {
         System.out.println("피자 굽기");
     }

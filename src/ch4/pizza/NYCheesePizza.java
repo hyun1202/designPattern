@@ -1,11 +1,21 @@
 package ch4.pizza;
 
-public class NYCheesePizza extends Pizza {
-    public NYCheesePizza() {
-        name = "뉴옥 치즈";
-        dough = "씬 크러스트 도우";
-        sauce = "마리나라 소스";
+import ch4.pizza.ingredient.factory.PizzaIngredientFactory;
 
-        toppings.add("레지아노 치즈");
+public class NYCheesePizza extends Pizza {
+    PizzaIngredientFactory ingredientFactory;
+
+    public NYCheesePizza(PizzaIngredientFactory ingredientFactory) {
+        name = "뉴욕 치즈 피자";
+        this.ingredientFactory = ingredientFactory;
+    }
+
+    void prepare() {
+        System.out.println("준비 중:" + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createChesse();
+        veggies = ingredientFactory.createVeggies();
+        pepperoni = ingredientFactory.createPepperoni();
     }
 }
