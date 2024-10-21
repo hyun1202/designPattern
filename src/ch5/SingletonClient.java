@@ -1,9 +1,37 @@
 package ch5;
 
+import java.io.*;
+
 public class SingletonClient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         ESingleton instance = ESingleton.INSTANCE;
         System.out.println(instance.getValue());
+
+        Singleton singleton1 = Singleton.getInstance();
+        Singleton singleton2 = Singleton.getInstance();
+
+        System.out.println(singleton1);
+        System.out.println(singleton2);
+        // true
+        System.out.println(singleton1 == singleton2);
+
+        String fileName = "singleton";
+
+        // 직렬화
+        ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
+        out.writeObject(singleton1);
+        out.close();
+
+        // 역직렬화
+        ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
+        // 역직렬화 시에 인스턴스를 다시 만들게 된다.
+        Singleton singleton3 = (Singleton) in.readObject();
+        in.close();
+
+        System.out.println(singleton1);
+        System.out.println(singleton3);
+        // false
+        System.out.println(singleton1 == singleton3);
     }
 }
 
