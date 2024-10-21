@@ -32,6 +32,7 @@ public class Singleton implements Serializable {
         return instance;
     }
 
+    // readResolve()를 구현하여 instance 생성 대신 싱글톤 객체 리턴
     private Object readResolve() {
         return instance;
     }

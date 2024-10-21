@@ -1,9 +1,10 @@
 package ch5;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
 
 public class SingletonClient {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
         ESingleton instance = ESingleton.INSTANCE;
         System.out.println(instance.getValue());
 
@@ -30,8 +31,21 @@ public class SingletonClient {
 
         System.out.println(singleton1);
         System.out.println(singleton3);
-        // false -> true
+        // false -> true로 변경
         System.out.println(singleton1 == singleton3);
+
+        // 리플렉션은 class로는 방어하지 못한다.
+        Constructor<Singleton> constructor = Singleton.class.getDeclaredConstructor();
+        // 생성자가 private 이므로 외부에서 access할 수 있도록 설정
+        constructor.setAccessible(true);
+
+        // 가져온 생성자를 통해 인스턴스화
+        Singleton singleton4 = constructor.newInstance();
+
+        System.out.println(singleton1);
+        System.out.println(singleton4);
+        // false
+        System.out.println(singleton1 == singleton4);
     }
 }
 
