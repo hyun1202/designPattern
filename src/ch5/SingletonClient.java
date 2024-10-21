@@ -15,7 +15,7 @@ public class SingletonClient {
         // true
         System.out.println(singleton1 == singleton2);
 
-        String fileName = "singleton";
+        String fileName = "serializeTest";
 
         // 직렬화
         ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
@@ -30,7 +30,7 @@ public class SingletonClient {
 
         System.out.println(singleton1);
         System.out.println(singleton3);
-        // false
+        // false -> true
         System.out.println(singleton1 == singleton3);
     }
 }

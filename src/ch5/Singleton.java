@@ -11,6 +11,9 @@ public class Singleton implements Serializable {
     // volatile 키워드를 사용
     // cache에 저장된 값이 아닌 Main Memory에서 읽어온다.
     private volatile static Singleton instance;
+    // 인스턴스의 직렬화 결과에는 데이터를 가질 이유가 없으므로 인스턴스 필드를 transient로 선언
+    // transient: 직렬화 과정에서 제외
+    transient String name = "";
 
     private Singleton() {
 
@@ -26,6 +29,10 @@ public class Singleton implements Serializable {
                 }
             }
         }
+        return instance;
+    }
+
+    private Object readResolve() {
         return instance;
     }
 }
