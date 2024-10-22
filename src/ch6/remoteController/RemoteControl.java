@@ -15,7 +15,7 @@ public class RemoteControl {
         }
     }
 
-    void setCommand(int slot, Command onCommand, Command offCommand) {
+    public void setCommand(int slot, Command onCommand, Command offCommand) {
         onCommands[slot] = onCommand;
         offCommands[slot] = offCommand;
     }
