@@ -5,8 +5,12 @@ public abstract class CaffeineBeverage {
         boilWater();
         brew();
         pourInCup();
-        addCondiments();
+        // 후크: 추상 클래스에서 선언되지만 기본적인 내용만 구현되어 있거나 아무 코드도 들어있지 않은 메소드
+        if (customerWantsCondiments()) {
+            addCondiments();
+        }
     }
+
 
     abstract void brew();
 
@@ -18,5 +22,9 @@ public abstract class CaffeineBeverage {
 
     void pourInCup() {
         System.out.println("컵에 따르는 중");
+    }
+
+    boolean customerWantsCondiments() {
+        return true;
     }
 }
