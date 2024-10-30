@@ -1,6 +1,8 @@
 package ch9;
 
-public class DinerMenuIterator implements Iterator {
+import java.util.Iterator;
+
+public class DinerMenuIterator implements Iterator<MenuItem> {
     int position = 0;
     MenuItem[] items;
 
