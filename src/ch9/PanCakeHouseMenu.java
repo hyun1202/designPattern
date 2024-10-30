@@ -2,7 +2,7 @@ package ch9;
 
 import java.util.*;
 
-public class PanCakeHouseMenu implements Menu {
+public class PanCakeHouseMenu implements IMenu {
     List<MenuItem> menuItems;
 
     public PanCakeHouseMenu() {

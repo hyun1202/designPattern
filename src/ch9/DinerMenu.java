@@ -2,7 +2,7 @@ package ch9;
 
 import java.util.Iterator;
 
-public class DinerMenu implements Menu {
+public class DinerMenu implements IMenu {
     static final int MAX_ITEMS = 6;
     int menuIndex;
     MenuItem[] menuItems;
