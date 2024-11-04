@@ -1,44 +1,70 @@
 package ch10;
 
 public class GumballMachine {
-    final static int SOLD_OUT = 0;
-    final static int NO_QUARTER = 1;
-    final static int HAS_QUARTER = 2;
-    final static int SOLD = 3;
 
-    int state = SOLD_OUT;
+    State soldOutState;
+    State noQuarterState;
+    State hasQuarterState;
+    State soldState;
+
+    State state = soldOutState;
     int count = 0;
 
-    public GumballMachine(int count) {
-        this.count = count;
-        if (count > 0) {
-            state = NO_QUARTER;
+    public GumballMachine(int numberGumballs) {
+        soldOutState = new SoldOutState(this);
+        noQuarterState = new NoQuarterState(this);
+        hasQuarterState = new HasQuarterState(this);
+        soldState = new SoldState(this);
+
+        this.count = numberGumballs;
+        if (numberGumballs > 0){
+            state = noQuarterState;
+        } else {
+            state = soldOutState;
         }
     }
 
     public void insertQuarter() {
-        // 동전 투입
-        if (state == HAS_QUARTER) {
-            System.out.println("동전은 한개만");
-        } else if (state == NO_QUARTER) {
-            state = HAS_QUARTER;
-            System.out.println("동전 투입");
-        } else if (state == SOLD_OUT) {
-            System.out.println("매진");
-        } else if (state == SOLD) {
-            System.out.println("알맹이를 내보내는 중");
-        }
+        state.insertQuarter();
     }
 
     public void ejectQuarter() {
-        // 동전 반환
+        state.ejectQuarter();
     }
 
     public void turnCrank() {
-        // 손잡이 돌리기
+        state.turnCrank();
+        state.dispense();
     }
 
-    public void dispense() {
-        // 알맹이 내보내기
+    void releaseBall() {
+        System.out.println("알맹이를 내보내고 있습니다.");
+        if (count > 0) {
+            count--;
+        }
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public State getSoldOutState() {
+        return soldOutState;
+    }
+
+    public State getNoQuarterState() {
+        return noQuarterState;
+    }
+
+    public State getHasQuarterState() {
+        return hasQuarterState;
+    }
+
+    public State getSoldState() {
+        return soldState;
+    }
+
+    public int getCount() {
+        return count;
     }
 }
