@@ -18,9 +18,9 @@ public class SoldOutState implements State {
     }
 
     @Override
-    public void turnCrank() {
+    public boolean turnCrank() {
         System.out.println("매진되었습니다.");
-        throw new RuntimeException("매진이 되었으므로 예외가 발생합니다.");
+        return false;
     }
 
     @Override

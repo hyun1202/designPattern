@@ -18,8 +18,9 @@ public class WinnerState implements State {
     }
 
     @Override
-    public void turnCrank() {
+    public boolean turnCrank() {
         System.out.println("손잡이는 한 번만 돌려주세요.");
+        return false;
     }
 
     @Override

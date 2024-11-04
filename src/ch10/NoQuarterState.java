@@ -19,9 +19,9 @@ public class NoQuarterState implements State {
     }
 
     @Override
-    public void turnCrank() {
+    public boolean turnCrank() {
         System.out.println("동전을 넣어주세요.");
-        throw new RuntimeException("동전을 넣지 않았으므로 예외가 발생합니다.");
+        return false;
     }
 
     @Override

@@ -35,8 +35,9 @@ public class GumballMachine {
     }
 
     public void turnCrank() {
-        state.turnCrank();
-        state.dispense();
+        if (state.turnCrank()) {
+            state.dispense();
+        }
     }
 
     void releaseBall() {

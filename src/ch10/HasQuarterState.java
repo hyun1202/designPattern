@@ -22,7 +22,7 @@ public class HasQuarterState implements State {
     }
 
     @Override
-    public void turnCrank() {
+    public boolean turnCrank() {
         System.out.println("손잡이를 돌리셨습니다.");
         int winner = randomWinner.nextInt(10);
         if (winner == 0 && gumballMachine.getCount() > 0) {
@@ -30,6 +30,7 @@ public class HasQuarterState implements State {
         } else {
             gumballMachine.setState(gumballMachine.getSoldState());
         }
+        return true;
     }
 
     @Override
