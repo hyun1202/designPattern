@@ -6,7 +6,7 @@ public class GumballMachineTest {
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
 
-//        gumballMachine.insertQuarter();
+        gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
 
         gumballMachine.insertQuarter();

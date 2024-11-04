@@ -27,4 +27,9 @@ public class SoldOutState implements State {
     public void dispense() {
         System.out.println("매진입니다.");
     }
+
+    @Override
+    public void refill() {
+        gumballMachine.setState(gumballMachine.getNoQuarterState());
+    }
 }

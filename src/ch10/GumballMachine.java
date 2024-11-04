@@ -19,6 +19,7 @@ public class GumballMachine {
         winnerState = new WinnerState(this);
 
         this.count = numberGumballs;
+
         if (numberGumballs > 0){
             state = noQuarterState;
         } else {
@@ -38,6 +39,15 @@ public class GumballMachine {
         if (state.turnCrank()) {
             state.dispense();
         }
+        if (count == 0) {
+            refill(5);
+        }
+    }
+
+    void refill(int count) {
+        this.count += count;
+        System.out.println("알맹이를 리필합니다.");
+        state.refill();
     }
 
     void releaseBall() {
