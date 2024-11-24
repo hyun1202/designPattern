@@ -1,5 +1,7 @@
 package ch12;
 
-public interface Quackable {
+import ch12.observer.QuackObservable;
+
+public interface Quackable extends QuackObservable {
     public void quack();
 }

@@ -5,6 +5,7 @@ import ch12.composite.Flock;
 import ch12.decorator.QuackCount;
 import ch12.factory.AbstractDuckFactory;
 import ch12.factory.CountingDuckFactory;
+import ch12.observer.Quackologist;
 
 public class DuckSimulator {
     public static void main(String[] args) {
@@ -20,7 +21,6 @@ public class DuckSimulator {
         Quackable rubberDuck = duckFactory.createRubberDuck();
         Quackable gooseDuck = new GooseAdapter(new Goose());
 
-        System.out.println("\n 오리 시뮬레이션 게임: 무리 (+컴포지트)");
 
         Flock flockOfDucks = new Flock();
 
@@ -43,11 +43,11 @@ public class DuckSimulator {
 
         flockOfDucks.add(flockOfMallards);
 
-        System.out.println("\n 오리 시뮬레이션 게임: 전체 무리");
-        simulate(flockOfDucks);
+        System.out.println("\n 오리 시뮬레이션 게임: 무리 (+옵저버)");
+        Quackologist quackologist = new Quackologist();
+        flockOfDucks.registerObserver(quackologist);
 
-        System.out.println("\n 오리 시뮬레이션 게임: 물 오리 무리");
-        simulate(flockOfMallards);
+        simulate(flockOfDucks);
 
         System.out.println("오리가 소리 낸 횟수: " +
                 QuackCount.getQuacks() + " 번");
