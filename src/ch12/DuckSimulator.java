@@ -2,18 +2,21 @@ package ch12;
 
 import ch12.adapter.GooseAdapter;
 import ch12.decorator.QuackCount;
+import ch12.factory.AbstractDuckFactory;
+import ch12.factory.CountingDuckFactory;
 
 public class DuckSimulator {
     public static void main(String[] args) {
         DuckSimulator simulator = new DuckSimulator();
-        simulator.simulate();
+        AbstractDuckFactory duckFactory = new CountingDuckFactory();
+        simulator.simulate(duckFactory);
     }
 
-    private void simulate() {
-        Quackable mallardDuck = new QuackCount(new MallardDuck());
-        Quackable redheadDuck = new QuackCount(new RedheadDuck());
-        Quackable duckCall = new QuackCount(new DuckCall());
-        Quackable rubberDuck = new QuackCount(new RubberDuck());
+    private void simulate(AbstractDuckFactory duckFactory) {
+        Quackable mallardDuck = duckFactory.createMallardDuck();
+        Quackable redheadDuck = duckFactory.createRedheadDuck();
+        Quackable duckCall = duckFactory.createDuckCall();
+        Quackable rubberDuck = duckFactory.createRubberDuck();
         Quackable gooseAdapter = new GooseAdapter(new Goose());
 
         System.out.println("\n 오리 시뮬레이션 게임");
